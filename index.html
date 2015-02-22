@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator Shiny Application</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Calculator Shiny Application">
+  <meta name="author" content="jhuds">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/default.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Calculator Shiny Application</h1>
+    <h2>Developing Data Products Project</h2>
+    <p>jhuds<br/>JHU on Coursera</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>This slide presentation is a pitch for Calcuator Shiny Application created as a simple project for Developing Data Products course offered by Johns Hopkins University on Coursera.</strong></p>
+
+<p>The remaining slides cover:</p>
+
+<ul>
+<li><p>Calculator Functionality</p></li>
+<li><p>Calculator Shiny App Components</p></li>
+<li><p>Shiny App and R Code Links</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Calculator Functionality</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This calculator in current version offers limited functionality. It prompts for two Values and an arithmetic operation to be performed between them. The functional steps are as follows:</p>
+
+<ol>
+<li>Prompt for Value 1</li>
+<li><p>Prompt for arithmetic opeation to perform</p>
+
+<pre><code>  +      -      *       /        %       1/x    square root
+</code></pre></li>
+<li><p>Prompt for optional Value 2</p></li>
+</ol>
+
+<p>Depending on the arithmetic operator chosen such as:
+\[\sqrt{}\]   \[\frac{1}{x}\]
+the application ignores the second value and applies the calculation just using first value.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Calculator Shiny App Components</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Calculator Shiny app build requires two components: ui.R and server.R scripts with R code.</p>
+
+<ul>
+<li>ui.R: prompts to accept user inputs and display results rendered by server component</li>
+<li>server.R: process the input values, apply the arithmetic operation and return the result</li>
+</ul>
+
+<p>e.g. Upon prompts if user entered values have following content
+value1 &lt;- 91,  value2 &lt;- 10 and operator &lt;- &#39;+&#39; and &#39;1/x&#39;. The results are as follows:</p>
+
+<pre><code class="r">value1 &lt;- 91;  value2 &lt;- 10; operator &lt;- &#39;+&#39;;
+eval(parse(text=paste(as.character(value1), operator, as.character(value2))))
+</code></pre>
+
+<pre><code>## [1] 101
+</code></pre>
+
+<pre><code class="r">eval(parse(text=paste(&#39;1 / &#39;, as.character(value1))))
+</code></pre>
+
+<pre><code>## [1] 0.01098901
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Shiny App and R Code Links</h2>
+  </hgroup>
+  <article data-timings="">
+    <hr>
+
+<p>Access Calculator App</p>
+
+<p><a href="https://jhuds.shinyapps.io/calculatorApp/">Calculator Shiny app URL</a></p>
+
+<hr>
+
+<p>Access R code for server and ui components from Github repository</p>
+
+<p><a href="https://github.com/jhuds/calculatorRepo">Calculator Github Repository URL</a></p>
+
+<hr>
+
+<hr>
+
+<p>--- Slide 5 of 5</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Calculator Functionality'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Calculator Shiny App Components'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Shiny App and R Code Links'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
